@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>h8zl | HRT countdown</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <!-- the following JS code is taken and modified from w3schools.com -->
+    <script>
+      // Set the date we're counting down to
+      var countDownDate = new Date("Jul 14, 2027 00:00:00").getTime();
+      
+      // Update the count down every 1 seconds
+      var x = setInterval(function() {
+      
+        // Get today's date and time
+        var now = new Date().getTime();
+      
+        // Find the distance between now and the count down date
+        var distance = countDownDate - now;
+      
+        // Time calculations for days, hours, minutes and seconds
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      
+        // Display the result in the element with id="demo"
+        document.getElementById("countdown").innerHTML = days + " days, " + hours + " hours";
+      
+       // If the count down is finished, write some text
+        if (distance < 0) {
+          clearInterval(x);
+          document.getElementById("countdown").innerHTML = "countdown over.";
+        }
+      }, 1000);
+      </script>
+  </head>
+  <body>
+    <div class="border-green">
+      <div id="introduction">
+        <h1>HRT countdown</h1>
+        <p>i'm on a waiting list for hormone replacement therapy (HRT), when i was signed up, a waiting period of 840 days was estimated, this is a countdown to that date.<br>obviously, this period is an estimate and is subject to change, so i will update it accordingly.</p>
+      </div>
+      
+      <h1 id="countdown"></h1>
+      <p>current estimated date: 14th july, 2027</p>
+      
+      <footer>
+        <h5>note: the code for the countdown is copied and modified from <a href="https://www.w3schools.com/howto/howto_js_countdown.asp" target=_blank>w3schools.com</a></h5>
+        <h6>made with &lt;3 by h8zl | return <a href="/index.html">home</a></h6>
+      </footer>
+    </div>
+  </body>
+</html>
